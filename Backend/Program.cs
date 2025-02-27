@@ -2,9 +2,10 @@ using Backend.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Configuration.AddJsonFile("Backend/appsettings.json", optional: false, reloadOnChange: true);
 if (builder.Environment.IsDevelopment())
     builder.Configuration.AddJsonFile("Backend/appsettings.Development.json", optional: true, reloadOnChange: true);
+else
+    builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
 ConfigureServices.Configure(builder);
 
