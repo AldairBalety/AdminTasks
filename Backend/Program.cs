@@ -7,4 +7,6 @@ var app = builder.Build();
 ConfigureMiddleware.Configure(app);
 ConfigureEndpoints.Configure(app);
 
-app.Run("http://localhost:4000");
+var port = Environment.GetEnvironmentVariable("PORT") ?? "4000";
+
+app.Run($"http://0.0.0.0:{port}");

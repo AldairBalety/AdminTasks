@@ -1,7 +1,7 @@
 # Imagen base para .NET
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
-EXPOSE 4000
+EXPOSE 10000  # Exponer el puerto 10000
 
 # Imagen para compilar
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
@@ -23,6 +23,6 @@ FROM base AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 
-# Asegurar que el contenedor escuche en el puerto correcto
-ENV ASPNETCORE_URLS=http://0.0.0.0:4000
+# Asegurar que el contenedor escuche en el puerto correcto usando el valor de la variable de entorno
+ENV ASPNETCORE_URLS=http://0.0.0.0:${PORT}
 ENTRYPOINT ["dotnet", "Backend.dll"]
