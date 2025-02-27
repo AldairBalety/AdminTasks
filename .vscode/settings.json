@@ -1,0 +1,5 @@
+{
+    "task.autoDetect": "on",
+    "terminal.integrated.defaultProfile.windows": "Git Bash"
+  }
+  
