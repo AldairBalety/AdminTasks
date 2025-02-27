@@ -7,11 +7,6 @@ public static class ConfigureServices
 {
     public static void Configure(WebApplicationBuilder builder)
     {
-        builder.Configuration
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("Backend/appsettings.json", optional: false, reloadOnChange: true)
-            .AddJsonFile("Backend/appsettings.Development.json", optional: true, reloadOnChange: true);
-
         var connectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
         var secretKey = builder.Configuration["Authentication:secretKey"];
         var issuer = builder.Configuration["Authentication:issuer"];
