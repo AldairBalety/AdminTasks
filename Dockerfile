@@ -22,7 +22,13 @@ RUN dotnet publish -c Release -o /app/publish
 # Imagen final
 FROM base AS final
 WORKDIR /app
+
+# Copiar los archivos del proyecto, incluyendo appsettings.json
 COPY --from=build /app/publish .
+
+# Copiar appsettings.json y appsettings.Development.json al contenedor
+COPY Backend/appsettings.json /app/Backend/appsettings.json
+COPY Backend/appsettings.Development.json /app/Backend/appsettings.Development.json
 
 # Asegurar que el contenedor escuche en el puerto correcto usando el valor de la variable de entorno
 ENV ASPNETCORE_URLS=http://0.0.0.0:${PORT}
