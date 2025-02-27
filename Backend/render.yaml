@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: my-dotnet-api
+    env: dotnet
+    buildCommand: "dotnet publish -c Release -o out"
+    startCommand: "dotnet out/Backend.dll"
+    region: oregon
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
