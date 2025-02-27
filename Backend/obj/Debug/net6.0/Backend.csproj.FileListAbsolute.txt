@@ -59,8 +59,3 @@
 /Users/aldair/Desktop/Autotrafic/Backend/obj/Debug/net6.0/Backend.pdb
 /Users/aldair/Desktop/Autotrafic/Backend/obj/Debug/net6.0/Backend.genruntimeconfig.cache
 /Users/aldair/Desktop/Autotrafic/Backend/obj/Debug/net6.0/ref/Backend.dll
-/Users/aldair/Desktop/Autotrafic/Backend/bin/Debug/net6.0/out/web.config
-/Users/aldair/Desktop/Autotrafic/Backend/bin/Debug/net6.0/out/appsettings.Development.json
-/Users/aldair/Desktop/Autotrafic/Backend/bin/Debug/net6.0/out/appsettings.json
-/Users/aldair/Desktop/Autotrafic/Backend/bin/Debug/net6.0/out/Backend.deps.json
-/Users/aldair/Desktop/Autotrafic/Backend/bin/Debug/net6.0/out/Backend.runtimeconfig.json
