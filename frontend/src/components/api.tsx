@@ -19,7 +19,7 @@ export default {
   register: (data: { name: string; lastName: string, email: string; password: string }) =>
     api.post('/user', data),
   getUser: () => api.get('/user'),
-  updateUser: (data: { name?: string; email?: string }) =>
+  updateUser: (data: { name?: string; lastName?: string, email?: string }) =>
     api.put('/user', data),
 
   // Task endpoints
