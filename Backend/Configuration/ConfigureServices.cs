@@ -12,7 +12,8 @@ public static class ConfigureServices
         var issuer = builder.Configuration["Authentication:issuer"];
         var audience = builder.Configuration["Authentication:audience"];
 
-        builder.Services.AddSingleton(new MySqlDbContext(connectionString));
+        builder.Services.AddSingleton(provider =>
+            new MySqlDbContext(connectionString, provider.GetRequiredService<ILogger<MySqlDbContext>>()));
         builder.Services.AddScoped(provider => new JwtTokenService(secretKey, issuer, audience));
         builder.Services.AddCors();
         builder.Services.AddEndpointsApiExplorer();
