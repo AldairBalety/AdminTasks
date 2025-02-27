@@ -49,21 +49,56 @@ ejecutar 2 consolas y ejecutar el backend y el frontend por separado
 ` cd frontend  `
 ` npm start  `
 
-# 6 creacion e implementacion del app
+# 6 interaccion con base de datos
+`SELECT * FROM bmpptmqkwzowojwtv6ha.Users;`
+
+`SELECT * FROM bmpptmqkwzowojwtv6ha.Task;`
+
+`call LoginUser("maria@example.com", "password456");`
+
+`call AddTask("don quijote de la mancha", "libro", 1);`
+
+`call AddUser("Aldair", "Gonzalez Conde", "aldebranbarsa@gmail.com", "password123");`
+
+`call DeleteTask(1);`
+
+`call GetTasksByUserId(1);`
+
+`call GetUserById(1);`
+
+`call UpdateTask(1, "don quijote de la mancha", "libro textual", 1);`
+
+`call UpdateUser(1, "Aldair", "Gonzalez Conde", "aldebranbarsa@gmail.com", "password1234");`
+
+
+# 7 creacion e implementacion del app
+
 ## creacion de backend minimal api
 `dotnet new web -n Backend`
+
 `cd Backend`
+
 `dotnet add package Swashbuckle.AspNetCore --version 6.0.0`
+
 `dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer`
+
 `dotnet add package MySql.Data`
+
 `dotnet add package System.IdentityModel.Tokens.Jwt`
+
 `dotnet add package Microsoft.IdentityModel.Tokens`
 
 ## creacion de frontend 
 `npx create-react-app frontend --template typescript`
+
 `cd frontend`
+
 `npm install axios`
+
 `npm install react-router-dom axios`
+
 `npm install --save-dev @types/react`
+
 `npm install styled-components`
+
 `npm install bootstrap`
