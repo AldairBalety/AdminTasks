@@ -102,3 +102,33 @@ ejecutar 2 consolas y ejecutar el backend y el frontend por separado
 `npm install styled-components`
 
 `npm install bootstrap`
+
+# 8 interaccion con la aplicacion 
+## accesos
+
+`admin@gmail.com`
+
+`qwe123`
+
+una vez logeado podra hacer uso del app,
+se puede agregar tareas de forma sencilla 
+y entendible para el usuario, 
+pestaña de logeo
+
+![pestaña de logeo](/assets/Captura de pantalla 2025-02-26 a la(s) 7.21.27 p.m..png)
+
+inmediatamente lo mandar a las tareas
+
+![pestaña de tareas](/assets/Captura de pantalla 2025-02-26 a la(s) 7.36.24 p.m..png)
+
+ahi podra agregar, editar o eliminar cualquier tarea.
+al dar click en el boton de editar los datos se pondran 
+en los campos de agregar y cambiara el boton.
+
+si una tarea no ah sido completada apareceera en amarillo.
+
+si una tarea ya ah sido completada aparecera en verde.
+
+![edicion de tareas](/assets/Captura de pantalla 2025-02-26 a la(s) 7.36.45 p.m..png)
+
+en la parte de del perfil podra actualizar sus datos como Nombre, Apellido y correo

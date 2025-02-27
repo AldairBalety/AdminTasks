@@ -27,7 +27,7 @@ export default function Profile() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await api.updateUser({ name, email });
+      await api.updateUser({ name, lastName, email,  });
     } catch (error) {
       console.error('Update failed:', error);
     }
@@ -65,7 +65,7 @@ export default function Profile() {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <button className="btn btn-primary" type="submit" onClick={logout} >Logout</button>
+            <button className="btn btn-primary" type="submit">Update Data</button>
           </form>
         </div>
       </div>

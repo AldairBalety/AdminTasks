@@ -91,7 +91,6 @@ public static class ConfigureEndpoints
                 { "inputName", newUser.Name },
                 { "inputLastName", newUser.LastName },
                 { "inputEmail", newUser.Email },
-                { "inputPassword", newUser.Password },
             };
             await mySqlDbContext.ExecuteNonQueryStoredProcedureAsync("UpdateUser", parameters);
             return Results.Ok();
