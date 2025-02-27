@@ -14,8 +14,7 @@ COPY Backend/ Backend/
 # Ejecutar dotnet restore
 RUN dotnet restore "Backend/Backend.csproj"
 
-# Copiar el resto del código
-COPY Backend/ Backend/
+# Publicar el proyecto
 WORKDIR "/src/Backend"
 RUN dotnet publish -c Release -o /app/publish
 
