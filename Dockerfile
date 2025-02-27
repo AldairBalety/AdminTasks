@@ -1,7 +1,7 @@
 # Imagen base para .NET
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
-EXPOSE 80
+EXPOSE 4000  # Exponer el puerto 4000
 
 # Imagen para compilar
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
@@ -22,4 +22,7 @@ RUN dotnet publish -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=build /app/publish .
+
+# Asegurar que el contenedor escuche en el puerto correcto
+ENV ASPNETCORE_URLS=http://0.0.0.0:4000
 ENTRYPOINT ["dotnet", "Backend.dll"]
