@@ -7,10 +7,10 @@ public static class ConfigureServices
 {
     public static void Configure(WebApplicationBuilder builder)
     {
-        var connectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
-        var secretKey = builder.Configuration["Authentication:secretKey"];
-        var issuer = builder.Configuration["Authentication:issuer"];
-        var audience = builder.Configuration["Authentication:audience"];
+        var connectionString = "Data Source=bmpptmqkwzowojwtv6ha-mysql.services.clever-cloud.com;Database=bmpptmqkwzowojwtv6ha;Uid=uwnc7xcpswc9m7kj;Pwd=KKt03JcPtO3nnrNXLawE;";
+        var secretKey = "bmpptmqkwbmpptmqkwzowojwtv6haEXTRASEGURA1234";
+        var issuer = "AutoTrafic";
+        var audience = "AutoTrafic_Useres";
 
         builder.Services.AddSingleton(provider =>
             new MySqlDbContext(connectionString, provider.GetRequiredService<ILogger<MySqlDbContext>>()));
