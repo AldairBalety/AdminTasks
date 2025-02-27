@@ -115,11 +115,11 @@ se puede agregar tareas de forma sencilla
 y entendible para el usuario, 
 pestaña de logeo
 
-![pestaña de logeo](/assets/Captura de pantalla 2025-02-26 a la(s) 7.21.27 p.m..png)
+![pestaña de logeo](/assets/Captura%20de%20pantalla%202025-02-26%20a%20la(s)%207.21.27%20p.m..png)
 
 inmediatamente lo mandar a las tareas
 
-![pestaña de tareas](/assets/Captura de pantalla 2025-02-26 a la(s) 7.36.24 p.m..png)
+![pestaña de tareas](/assets/Captura%20de%20pantalla%202025-02-26%20a%20la(s)%207.36.24%20p.m..png)
 
 ahi podra agregar, editar o eliminar cualquier tarea.
 al dar click en el boton de editar los datos se pondran 
@@ -129,6 +129,6 @@ si una tarea no ah sido completada apareceera en amarillo.
 
 si una tarea ya ah sido completada aparecera en verde.
 
-![edicion de tareas](/assets/Captura de pantalla 2025-02-26 a la(s) 7.36.45 p.m..png)
+![edicion de tareas](/assets/Captura%20de%20pantalla%202025-02-26%20a%20la(s)%207.36.45%20p.m..png)
 
 en la parte de del perfil podra actualizar sus datos como Nombre, Apellido y correo
