@@ -1,7 +1,9 @@
 services:
   - type: web
     name: my-dotnet-api
-    env: dotnet
+    runtime: dotnet
+    repo: https://github.com/AldairBalety/AdminTasks
+    rootDir: Backend
     buildCommand: "dotnet publish -c Release -o out"
     startCommand: "dotnet out/Backend.dll"
     region: oregon
