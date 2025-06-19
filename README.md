@@ -1,13 +1,217 @@
-- [(Produccion)](https://admintasks.onrender.com/)
-#  1. Verifica los Requisitos Previos   
-Asegúrate de que la nueva PC tenga instalados:  
-## Backend:  
-  - .NET SDK 6.0+  
-  - MySQL Server (si usas MySQL)  
-## Frontend:  
-  - Node.js (que incluye npm)  
+# 🚀 AutoTrafic Facebook News Bot
 
-#  2. Descarga el Código   
+**Sistema Inteligente de Automatización de Contenido para Facebook**
+
+AutoTrafic es un bot avanzado que genera y publica automáticamente noticias de tecnología de alta calidad en páginas de Facebook, optimizado para engagement y monetización.
+
+## ✨ Características Principales
+
+- 🧠 **IA Avanzada**: Usa OpenAI GPT-3.5-turbo para contenido inteligente
+- 🎨 **Imágenes Personalizadas**: Genera imágenes únicas con DALL-E 2
+- 📱 **Publicación Automática**: Integración completa con Facebook Graph API
+- 📊 **Estrategia de Contenido**: Sistema inteligente de categorización y CTAs
+- ⏰ **Horarios Óptimos**: Publicación en momentos de mayor engagement
+- 💰 **Monetización**: Optimizado para maximizar clics y conversiones
+
+## 🔧 Configuración Inicial
+
+### 1. Configurar OpenAI
+
+Agrega tu API Key de OpenAI en `appsettings.Development.json`:
+
+```json
+{
+  "OpenAI": {
+    "ApiKey": "sk-tu-api-key-de-openai"
+  }
+}
+```
+
+### 2. Configurar Facebook (Opcional - para publicación automática)
+
+```json
+{
+  "Facebook": {
+    "PageAccessToken": "tu-page-access-token",
+    "PageId": "tu-page-id",
+    "AppId": "tu-app-id",
+    "AppSecret": "tu-app-secret"
+  }
+}
+```
+
+### 3. Configurar el Bot
+
+```json
+{
+  "NewsBot": {
+    "IntervalMinutes": 240,
+    "AutoPublish": false
+  }
+}
+```
+
+## 🚀 Instalación y Ejecución
+
+### Instalar dependencias:
+```bash
+dotnet restore
+```
+
+### Compilar:
+```bash
+dotnet build
+```
+
+### Ejecutar:
+```bash
+dotnet run
+```
+
+La aplicación estará disponible en:
+- **API**: http://localhost:4000
+- **Swagger**: http://localhost:4000/swagger
+- **Configuración Facebook**: http://localhost:4000/auth/facebook-setup
+
+## 📋 Endpoints Principales
+
+### 🚀 Generar Noticia
+```
+POST /api/news/generate
+```
+
+Ejemplo de request:
+```json
+{
+  "category": "AI",
+  "customTopic": "Nuevos avances en inteligencia artificial",
+  "cta": "LearnMore",
+  "generateImage": true,
+  "publishToFacebook": false
+}
+```
+
+### 📊 Estadísticas
+```
+GET /api/news/stats
+```
+
+### 📋 Posts Pendientes
+```
+GET /api/news/pending
+```
+
+## 🔧 Configuración de Facebook
+
+### Paso 1: Crear App en Facebook Developers
+1. Ve a [Facebook Developers](https://developers.facebook.com/apps/)
+2. Crea una nueva app tipo **Business**
+3. Agrega el producto **Facebook Login**
+4. Configura los permisos: `pages_show_list`, `pages_read_engagement`, `pages_manage_posts`
+
+### Paso 2: Obtener Tokens
+1. Ve a **Graph API Explorer** en Facebook Developers
+2. Genera un **User Access Token** con permisos de páginas
+3. Usa el endpoint: `/me/accounts` para obtener el **Page Access Token**
+4. Guarda tu **Page ID** y **Page Access Token**
+
+### Paso 3: App Review (Para publicación automática)
+Para publicación automática en Facebook, necesitas completar el **App Review** de Facebook:
+
+1. Sube tu **Política de Privacidad**: http://localhost:4000/privacy-policy
+2. Configura **Eliminación de Datos**: http://localhost:4000/data-deletion
+3. Solicita **App Review** para `pages_manage_posts`
+4. Proporciona video demostrativo de la funcionalidad
+
+### URLs de Ayuda
+- 🔧 [Guía de Configuración](http://localhost:4000/auth/facebook-setup)
+- 🔍 [Validar Token](http://localhost:4000/auth/facebook-tokens?token=TU_USER_TOKEN)
+- ✅ [Validar Configuración](http://localhost:4000/auth/validate-facebook-token)
+- 🔐 [Verificar Permisos](http://localhost:4000/auth/check-page-permissions)
+
+## 📄 Políticas (Requeridas para Facebook)
+
+- **Política de Privacidad**: http://localhost:4000/privacy-policy
+- **Términos de Servicio**: http://localhost:4000/terms-of-service
+- **Eliminación de Datos**: http://localhost:4000/data-deletion
+
+## 🎯 Categorías de Noticias
+
+- `Technology` - Tecnología general
+- `AI` - Inteligencia Artificial
+- `Programming` - Programación y desarrollo
+- `WebDevelopment` - Desarrollo web
+- `MobileDevelopment` - Desarrollo móvil
+- `DataScience` - Ciencia de datos
+- `Cybersecurity` - Ciberseguridad
+- `StartupNews` - Noticias de startups
+- `TechTrends` - Tendencias tecnológicas
+
+## 💡 Call-to-Actions
+
+- `ReadMore` - Leer más
+- `LearnMore` - Aprender más
+- `DiscoverMore` - Descubrir más
+- `GetStarted` - Empezar
+- `Subscribe` - Suscribirse
+- `Download` - Descargar
+- `TryNow` - Probar ahora
+- `BookDemo` - Agendar demo
+- `ContactUs` - Contactar
+
+## 🔄 Sistema Automático
+
+El bot funciona automáticamente:
+
+1. **Horarios Inteligentes**: Publica en horarios de mayor engagement (9 AM, 12 PM, 3 PM, 6 PM, 9 PM)
+2. **Selección de Contenido**: Algoritmo inteligente para seleccionar categorías según día/hora
+3. **Generación de Imágenes**: Crea imágenes únicas para cada noticia
+4. **Manejo de Errores**: Gestión robusta de errores de Facebook y OpenAI
+
+## ⚠️ Notas Importantes
+
+### Sin App Review
+Si no has completado el App Review de Facebook:
+- ✅ El sistema genera contenido perfectamente
+- ✅ Las imágenes se crean correctamente
+- ✅ El contenido queda listo para publicación manual
+- ❌ La publicación automática está limitada
+
+### Con App Review Aprobado
+Una vez aprobado el App Review:
+- ✅ Publicación completamente automática
+- ✅ Sin intervención manual necesaria
+- ✅ Sistema funciona 24/7
+
+## 🛠️ Desarrollo
+
+### Estructura del Proyecto
+```
+Backend/
+├── Models/
+│   └── NewsModels.cs          # Modelos de datos
+├── Services/
+│   └── NewsService.cs         # Lógica principal del bot
+├── HostedServices/
+│   └── NewsProcessRelease.cs  # Servicio automático
+├── Program.cs                 # Configuración y endpoints
+└── appsettings.json          # Configuración
+```
+
+### Dependencias Principales
+- `OpenAI-DotNet` - Cliente de OpenAI
+- `Swashbuckle.AspNetCore` - Documentación Swagger
+- `Microsoft.AspNetCore` - Framework web
+
+## 📞 Soporte
+
+- **Email**: support@autotrafic.com
+- **Documentación**: http://localhost:4000/swagger
+- **Configuración**: http://localhost:4000/auth/facebook-setup
+
+---
+
+© 2025 AutoTrafic. Sistema Inteligente de Automatización de Contenido.   
 Si el código está en un repositorio de GitHub:  
 ` git clone <URL_DEL_REPOSITORIO>  `
 ` cd <NOMBRE_DEL_PROYECTO>  `
