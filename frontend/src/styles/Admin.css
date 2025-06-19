@@ -1,0 +1,192 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  margin-top: auto;
+}
+
+aside {
+  width: 250px;
+  background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+  padding: 0;
+  min-height: 100vh;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.1);
+}
+
+aside nav {
+  padding: 20px 0;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+aside ul li {
+  margin: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+aside ul hr {
+  border: none;
+  border-top: 2px solid rgba(255,255,255,0.2);
+  margin: 10px 20px;
+}
+
+aside a {
+  display: block;
+  padding: 15px 25px;
+  text-decoration: none;
+  color: #ecf0f1;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+aside a:hover {
+  background-color: rgba(255,255,255,0.1);
+  color: #ffffff;
+  padding-left: 30px;
+}
+
+/* Estilos para las páginas de contenido */
+.page-content {
+  padding: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-content h1 {
+  color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+
+.page-content h2 {
+  color: #34495e;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.page-content h3 {
+  color: #7f8c8d;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.page-content ul, .page-content ol {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+.page-content li {
+  margin-bottom: 8px;
+}
+
+.page-content a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.page-content a:hover {
+  text-decoration: underline;
+}
+
+/* Cajas de información especiales */
+.info-box {
+  background: #f8f9fa;
+  border-left: 4px solid #3498db;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.warning-box {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.success-box {
+  background: #d4edda;
+  border-left: 4px solid #28a745;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+  
+  aside {
+    width: 100%;
+    min-height: auto;
+  }
+  
+  aside ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  aside ul li {
+    flex: 1;
+    min-width: 120px;
+    border-bottom: none;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  aside a {
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  aside a:hover {
+    padding-left: 15px;
+  }
+  
+  .page-content {
+    padding: 20px 15px;
+  }
+}

@@ -3,6 +3,11 @@ bin/
 obj/
 publish/
 
+# Configuration files with secrets
+appsettings.Local.json
+appsettings.Production.json
+*.local.json
+
 # User-specific files
 *.user
 *.suo
@@ -12,11 +17,6 @@ publish/
 # Visual Studio
 .vs/
 .vscode/
-
-# Configuration files with secrets
-appsettings.Production.json
-appsettings.Development.json
-appsettings.Local.json
 
 # Environment files
 .env

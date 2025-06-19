@@ -1,42 +1,39 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './components/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
-import Login from './components/Login';
-import Register from './components/Register';
-import Profile from './components/Profile';
-import TaskList from './components/TaskList';
-import Navbar from './components/Navbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
+
+// Pages
+import Dashboard from './pages/Dashboard';
+import News from './pages/News';
+import Settings from './pages/Settings';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import DataDeletion from './pages/DataDeletion';
+
+// Styles
+import './styles/Admin.css';
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <Navbar /> {/* Añadir el navbar aquí */}
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '1rem' }}>
+    <Router>
+      <div className="app">
+        <Sidebar />
+        <main className="main-content">
+          <Header />
           <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route
-              path="/"
-              element={
-                <ProtectedRoute>
-                  <TaskList />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/profile"
-              element={
-                <ProtectedRoute>
-                  <Profile />
-                </ProtectedRoute>
-              }
-            />
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/data-deletion" element={<DataDeletion />} />
           </Routes>
-        </div>
-      </Router>
-    </AuthProvider>
+          <Footer />
+        </main>
+      </div>
+    </Router>
   );
 }
 

@@ -168,12 +168,95 @@ namespace Backend.Models
         public List<NewsItem> RecentNews { get; set; } = new();
     }
 
-    // Respuestas de API
+    // Modelos adicionales para analíticas y configuración
+    public class AnalyticsData
+    {
+        public List<DailyMetric> DailyPosts { get; set; } = new();
+        public List<CategoryStats> CategoryDistribution { get; set; } = new();
+        public PerformanceMetrics Performance { get; set; } = new();
+    }
+
+    public class DailyMetric
+    {
+        public string Date { get; set; } = "";
+        public int Posts { get; set; }
+        public int Engagement { get; set; }
+    }
+
+    public class CategoryStats
+    {
+        public string Category { get; set; } = "";
+        public int Count { get; set; }
+        public string Color { get; set; } = "";
+    }
+
+    public class PerformanceMetrics
+    {
+        public int TotalReach { get; set; }
+        public int TotalEngagement { get; set; }
+        public double AvgEngagementRate { get; set; }
+        public string BestPerformingCategory { get; set; } = "";
+    }
+
+    public class SystemStatus
+    {
+        public Dictionary<string, ServiceStatus> Services { get; set; } = new();
+        public ScheduleInfo Schedule { get; set; } = new();
+        public SystemMetrics Metrics { get; set; } = new();
+    }
+
+    public class ServiceStatus
+    {
+        public string Status { get; set; } = "";
+        public DateTime LastCheck { get; set; }
+        public string? ErrorMessage { get; set; }
+    }
+
+    public class ScheduleInfo
+    {
+        public DateTime NextExecution { get; set; }
+        public DateTime LastExecution { get; set; }
+        public bool IsActive { get; set; }
+    }
+
+    public class SystemMetrics
+    {
+        public string Uptime { get; set; } = "";
+        public int TotalRequests { get; set; }
+        public double SuccessRate { get; set; }
+    }
+
+    // Modelos para el sistema de usuarios y tareas
+    public class User
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = "";
+        public string LastName { get; set; } = "";
+        public string Email { get; set; } = "";
+        public string Password { get; set; } = "";
+    }
+
+    public class UserTask
+    {
+        public int Id { get; set; }
+        public string Title { get; set; } = "";
+        public string Description { get; set; } = "";
+        public bool Completed { get; set; }
+        public int UserId { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    }
+
+    public class Login
+    {
+        public string Username { get; set; } = "";
+        public string Password { get; set; } = "";
+    }
+
+    // Respuestas de la API
     public class ApiResponse<T>
     {
         public bool Success { get; set; }
         public string Message { get; set; } = "";
         public T? Data { get; set; }
-        public string? Error { get; set; }
     }
 }
