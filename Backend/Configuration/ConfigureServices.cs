@@ -2,19 +2,17 @@ namespace Backend.Configuration;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
+using Backend.Helpers;
 
 public static class ConfigureServices
 {
     public static void Configure(WebApplicationBuilder builder)
     {
-        var connectionString = "Data Source=bmpptmqkwzowojwtv6ha-mysql.services.clever-cloud.com;Database=bmpptmqkwzowojwtv6ha;Uid=uwnc7xcpswc9m7kj;Pwd=KKt03JcPtO3nnrNXLawE;";
-        var secretKey = "bmpptmqkwbmpptmqkwzowojwtv6haEXTRASEGURA1234";
-        var issuer = "AutoTrafic";
-        var audience = "AutoTrafic_Useres";
+        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
         builder.Services.AddSingleton(provider =>
             new MySqlDbContext(connectionString, provider.GetRequiredService<ILogger<MySqlDbContext>>()));
-        builder.Services.AddScoped(provider => new JwtTokenService(secretKey, issuer, audience));
+        builder.Services.AddScoped<JwtTokenService>();
         builder.Services.AddCors();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(options =>
